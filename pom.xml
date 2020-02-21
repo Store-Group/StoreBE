@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.QS</groupId>
-	<artifactId>Store</artifactId>
+	<artifactId>StoreBE</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Store</name>
 	<description>Store Back End REST web service</description>
