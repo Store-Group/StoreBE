@@ -1,15 +1,43 @@
 package com.QS.Store.Models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Table;
+
+
+@Entity
+@Table (name = "Products")
 public class Product {
-	private String productID;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="productid")
+	
+	private int productId;
+	
+	@Column(name="productname")
 	private String productName;
-	private String productDesc;
-	private String productQuantity;
-	public String getProductID() {
-		return productID;
+	@Column(name="productdescription")
+	private String productDescription;
+	@Column(name="quantityinstock")
+	private int quantityInStock;
+	@Column(name="price")
+	private Double price;
+	
+	@Lob
+	@Column(name="productimage")
+	private byte[] productImage;
+	
+	
+	public int getProductId() {
+		return productId;
 	}
-	public void setProductID(String productID) {
-		this.productID = productID;
+	public void setProductId(int productId) {
+		this.productId = productId;
 	}
 	public String getProductName() {
 		return productName;
@@ -17,19 +45,33 @@ public class Product {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
-	public String getProductDesc() {
-		return productDesc;
+	public String getProductDescription() {
+		return productDescription;
 	}
-	public void setProductDesc(String productDesc) {
-		this.productDesc = productDesc;
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
 	}
-	public String getProductQuantity() {
-		return productQuantity;
+	public int getQuantityInStock() {
+		return quantityInStock;
 	}
-	public void setProductQuantity(String productQuantity) {
-		this.productQuantity = productQuantity;
+	public void setQuantityInStock(int quantityInStock) {
+		this.quantityInStock = quantityInStock;
 	}
-	
+	public Double getPrice() {
+		return price;
+	}
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+	public byte[] getProductImage() {
+		return productImage;
+	}
+	public void setProductImage(byte[] productImage) {
+		this.productImage = productImage;
+	}
+
+
+
 	
 
 }
