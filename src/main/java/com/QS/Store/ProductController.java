@@ -3,7 +3,10 @@ package com.QS.Store;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.*;
 
 import com.QS.Store.Models.Product;
@@ -18,6 +21,12 @@ public class ProductController {
 	public List<Product> getProducts(){
 		
 		return productRepository.findAll();
+	}
+	
+	@PostMapping("/products")
+	public Product createProduct(@Valid @RequestBody Product product) {
+		
+		return productRepository.save(product);
 	}
 	
 	@GetMapping("/products/{id}")
